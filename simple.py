@@ -17,6 +17,19 @@ def display_breakdown(daily_values: list, meal_count: int):
     Calories Per Meal: {}
     """.format(daily_values[0], (daily_values[0] / meal_count), daily_values[1], (daily_values[1] / meal_count), daily_values[2], (daily_values[2] / meal_count), daily_values[3], (daily_values[3] / meal_count)))
 
+def calculate_macros(protein: float, carbs: float, lipids: float) -> list:
+    macros = []
+    for val in daily_values:
+        percent_protein = val * protein
+        percent_carbs = val * carbs
+        percent_lipid = val * lipids
+        protein_grams = round(percent_protein /4)
+        carbs_grams = round(percent_carbs / 4)
+        lipid_grams = round(percent_lipid / 9)
+        day = [protein_grams, carbs_grams, lipid_grams]
+        macros.append(day)
+    return macros
+
 # Calculates RMR based on user input 
 # Resting Metabolic Rate = user weight * 10
 rmr = None
@@ -56,13 +69,24 @@ print(goal)
 if goal == "Cut" or goal == "C":
     for i in range(len(daily_values)):
         daily_values[i] -= 500
-        goal = "Cutting"
+    goal = "Cutting"
+
+    # 40/35/25
+    macros = calculate_macros(0.4, 0.35, 0.25)
+
 elif goal == "Bulk" or goal == "B":
     for i in range(len(daily_values)):
         daily_values[i] += 500
-        goal = "Bulking"
+    goal = "Bulking"
+
+    # 30/50/20
+    macros = calculate_macros(0.3, 0.5, 0.2)
+
 else:
     goal = "Maintaining"
+
+    # 35/45/25
+    macros = calculate_macros(0.35, 0.45, 0.25)
 
 # Determines desired daily meal count
 meal_count = None
@@ -72,18 +96,8 @@ while type(meal_count) != int:
     except ValueError:
         print("Sorry, please enter a numeric value.")
 
-# TODO: Completely retool macro breakdowns
-macros = []
-for val in daily_values:
-    protein_in_cals = val * 0.4
-    protein_in_grams = protein_in_cals / 4
-    carbs_in_grams = protein_in_grams
-    lipids_in_cals = val * 0.2
-    lipids_in_grams = lipids_in_cals / 9
-    daily_macros = [protein_in_grams, carbs_in_grams, lipids_in_grams]
-    macros.append(daily_macros)
-
 for day in macros:
     print(day)
 
 display_breakdown(daily_values, meal_count)
+

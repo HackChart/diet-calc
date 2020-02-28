@@ -64,10 +64,6 @@ elif goal == "Bulk" or goal == "B":
 else:
     goal = "Maintaining"
 
-#TODO:  REMOVE BEFORE SHIPPING
-print(goal)
-print(daily_values)
-
 # Determines desired daily meal count
 meal_count = None
 while type(meal_count) != int:
@@ -76,6 +72,18 @@ while type(meal_count) != int:
     except ValueError:
         print("Sorry, please enter a numeric value.")
 
+# TODO: Completely retool macro breakdowns
+macros = []
+for val in daily_values:
+    protein_in_cals = val * 0.4
+    protein_in_grams = protein_in_cals / 4
+    carbs_in_grams = protein_in_grams
+    lipids_in_cals = val * 0.2
+    lipids_in_grams = lipids_in_cals / 9
+    daily_macros = [protein_in_grams, carbs_in_grams, lipids_in_grams]
+    macros.append(daily_macros)
 
+for day in macros:
+    print(day)
 
 display_breakdown(daily_values, meal_count)

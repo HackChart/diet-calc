@@ -1,21 +1,21 @@
 def display_breakdown(daily_values: list, meal_count: int):
-    print("""
+    print(f"""
     Rest Day:
-    Total Calories: {}
-    Calories Per Meal {}
+    Total Calories: {daily_values[0]}
+    Calories Per Meal {(daily_values[0] / meal_count)}
 
     Cardio Only:
-    Total Calories: {}
-    Calories Per Meal: {}
+    Total Calories: {daily_values[1]}
+    Calories Per Meal: {(daily_values[1] / meal_count)}
 
     Weightlifting Day:
-    Total Calories: {}
-    Calories Per Meal: {}
+    Total Calories: {daily_values[2]}
+    Calories Per Meal: {(daily_values[2] / meal_count)}
 
     Weightlifting + Another Strenuous Exercise:
-    Total Calories: {}
-    Calories Per Meal: {}
-    """.format(daily_values[0], (daily_values[0] / meal_count), daily_values[1], (daily_values[1] / meal_count), daily_values[2], (daily_values[2] / meal_count), daily_values[3], (daily_values[3] / meal_count)))
+    Total Calories: {daily_values[3]}
+    Calories Per Meal: {(daily_values[3] / meal_count)}
+    """)
 
 def calculate_macros(protein: float, carbs: float, lipids: float) -> list:
     macros = []

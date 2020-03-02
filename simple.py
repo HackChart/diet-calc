@@ -1,8 +1,13 @@
-def display_breakdown(daily_values: list, meal_count: int):
+def display_breakdown(daily_values: list, macros: list, meal_count: int, goal: str):
     print(f"""
+    Here's your plan for {goal}
+    ----------------------------------
+
     Rest Day:
     Total Calories: {daily_values[0]}
     Calories Per Meal {(daily_values[0] / meal_count)}
+    Total Macro Breakdown (P/C/F): {macros[0][0]}/{macros[0][1]}/{macros[0][2]}
+    Macro Breakdown Per Meal (P/C/F): # TODO: finish formatting
 
     Cardio Only:
     Total Calories: {daily_values[1]}
@@ -99,5 +104,5 @@ while type(meal_count) != int:
 for day in macros:
     print(day)
 
-display_breakdown(daily_values, meal_count)
+display_breakdown(daily_values, macros, meal_count, goal)
 

@@ -7,19 +7,25 @@ def display_breakdown(daily_values: list, macros: list, meal_count: int, goal: s
     Total Calories: {daily_values[0]}
     Calories Per Meal {(daily_values[0] / meal_count)}
     Total Macro Breakdown (P/C/F): {macros[0][0]}/{macros[0][1]}/{macros[0][2]}
-    Macro Breakdown Per Meal (P/C/F): # TODO: finish formatting
+    Macro Breakdown Per Meal (P/C/F): {round(macros[0][0] / meal_count)}/{round(macros[0][1] / meal_count)}/{round(macros[0][2] / meal_count)}
 
     Cardio Only:
     Total Calories: {daily_values[1]}
     Calories Per Meal: {(daily_values[1] / meal_count)}
+    Total Macro Breakdown (P/C/F): {macros[1][0]}/{macros[1][1]}/{macros[1][2]}
+    Macro Breakdown Per Meal (P/C/F): {round(macros[1][0] / meal_count)}/{round(macros[1][1] / meal_count)}/{round(macros[1][2] / meal_count)}
 
     Weightlifting Day:
     Total Calories: {daily_values[2]}
     Calories Per Meal: {(daily_values[2] / meal_count)}
+    Total Macro Breakdown (P/C/F): {macros[2][0]}/{macros[2][1]}/{macros[2][2]}
+    Macro Breakdown Per Meal (P/C/F): {round(macros[2][0] / meal_count)}/{round(macros[2][1] / meal_count)}/{round(macros[2][2] / meal_count)}
 
     Weightlifting + Another Strenuous Exercise:
     Total Calories: {daily_values[3]}
     Calories Per Meal: {(daily_values[3] / meal_count)}
+    Total Macro Breakdown (P/C/F): {macros[3][0]}/{macros[3][1]}/{macros[3][2]}
+    Macro Breakdown Per Meal (P/C/F): {round(macros[3][0] / meal_count)}/{round(macros[3][1] / meal_count)}/{round(macros[3][2] / meal_count)}
     """)
 
 def calculate_macros(protein: float, carbs: float, lipids: float) -> list:

@@ -74,7 +74,6 @@ Please select from:
 (M)aintain
 """)
     goal = goal.title()
-print(goal)
 
 # Augments daily values based on goal
 if goal == "Cut" or goal == "C":
@@ -107,8 +106,6 @@ while type(meal_count) != int:
     except ValueError:
         print("Sorry, please enter a numeric value.")
 
-for day in macros:
-    print(day)
 
 display_breakdown(daily_values, macros, meal_count, goal)
 

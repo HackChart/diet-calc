@@ -1,3 +1,5 @@
+# TODO: Doesn't really need to be a function since its only called once in the current state. 
+# Initially written as a func due to design choices that changed
 def display_breakdown(daily_values: list, macros: list, meal_count: int, goal: str):
     print(f"""
     Here's your plan for {goal}
@@ -50,7 +52,7 @@ while type(rmr) != int:
     except ValueError:
         print("Sorry, that didn't work. Please enter a numeric value.")
 
-# Calculates daily expenditures based on different activity factors 
+# Calculates daily expenditures based on different activity factors based on NASM guidelines
 daily_values = []
 rest_day = rmr * 1.2
 daily_values.append(rest_day)
@@ -76,12 +78,14 @@ Please select from:
     goal = goal.title()
 
 # Augments daily values based on goal
+# Set for s metabolically safe loss or gain of 1 lb/week
+# Based on knowledge that 3500 calories == 1 lb (500 * 7 = 3500)
 if goal == "Cut" or goal == "C":
     for i in range(len(daily_values)):
         daily_values[i] -= 500
     goal = "Cutting"
 
-    # 40/35/25
+    # 40/35/25 (Higher protein ratio for muscle maintenance during low calorie days)
     macros = calculate_macros(0.4, 0.35, 0.25)
 
 elif goal == "Bulk" or goal == "B":
@@ -89,13 +93,13 @@ elif goal == "Bulk" or goal == "B":
         daily_values[i] += 500
     goal = "Bulking"
 
-    # 30/50/20
+    # 30/50/20 (Higher carb ratio for adding lean mass)
     macros = calculate_macros(0.3, 0.5, 0.2)
 
 else:
     goal = "Maintaining"
 
-    # 35/45/25
+    # 35/45/25 (Balanced ratio for maintenance)
     macros = calculate_macros(0.35, 0.45, 0.25)
 
 # Determines desired daily meal count

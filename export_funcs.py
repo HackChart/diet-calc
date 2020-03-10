@@ -6,3 +6,6 @@ def to_csv():
 def to_txt():
     with open("Meal Plan.txt", "w") as f:
         pass
+
+def email():
+    pass

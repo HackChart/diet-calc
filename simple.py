@@ -1,5 +1,5 @@
 # TODO: Doesn't really need to be a function since its only called once in the current state. 
-# Initially written as a func due to design choices that changed
+# Initially written as a func due to design choices that changed (Rethink this for exporting)
 def display_breakdown(daily_values: list, macros: list, meal_count: int, goal: str):
     print(f"""
     Here's your plan for {goal}

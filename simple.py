@@ -2,7 +2,7 @@
 # Initially written as a func due to design choices that changed (Rethink this for exporting)
 def display_breakdown(daily_values: list, macros: list, meal_count: int, goal: str):
     print(f"""
-    Here's your plan for {goal}
+    Here's your plan for {goal}:
     ----------------------------------
 
     Rest Day:
@@ -99,8 +99,8 @@ elif goal == "Bulk" or goal == "B":
 else:
     goal = "Maintaining"
 
-    # 35/45/25 (Balanced ratio for maintenance)
-    macros = calculate_macros(0.35, 0.45, 0.25)
+    # 35/40/25 (Balanced ratio for maintenance)
+    macros = calculate_macros(0.35, 0.40, 0.25)
 
 # Determines desired daily meal count
 meal_count = None

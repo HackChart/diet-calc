@@ -1,0 +1,28 @@
+
+    Here's your plan for Maintaining:
+    ----------------------------------
+
+    Rest Day:
+    Total Calories: 2400.0
+    Calories Per Meal 480.0
+    Total Macro Breakdown (P/C/F): 210/240/67
+    Macro Breakdown Per Meal (P/C/F): 42/48/13
+
+    Cardio Only:
+    Total Calories: 3000.0
+    Calories Per Meal: 600.0
+    Total Macro Breakdown (P/C/F): 262/300/83
+    Macro Breakdown Per Meal (P/C/F): 52/60/17
+
+    Weightlifting Day:
+    Total Calories: 3200.0
+    Calories Per Meal: 640.0
+    Total Macro Breakdown (P/C/F): 280/320/89
+    Macro Breakdown Per Meal (P/C/F): 56/64/18
+
+    Weightlifting + Another Strenuous Exercise:
+    Total Calories: 3800.0
+    Calories Per Meal: 760.0
+    Total Macro Breakdown (P/C/F): 332/380/106
+    Macro Breakdown Per Meal (P/C/F): 66/76/21
+    

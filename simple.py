@@ -1,7 +1,7 @@
-# TODO: Doesn't really need to be a function since its only called once in the current state. 
-# Initially written as a func due to design choices that changed (Rethink this for exporting)
-def display_breakdown(daily_values: list, macros: list, meal_count: int, goal: str):
-    print(f"""
+from export_funcs import to_txt
+
+def display_breakdown(daily_values: list, macros: list, meal_count: int, goal: str) -> str:
+    return(f"""
     Here's your plan for {goal}:
     ----------------------------------
 
@@ -111,5 +111,9 @@ while type(meal_count) != int:
         print("Sorry, please enter a numeric value.")
 
 
-display_breakdown(daily_values, macros, meal_count, goal)
+diet_plan = display_breakdown(daily_values, macros, meal_count, goal)
+print(diet_plan)
 
+# TODO: Create decision tree to assess whether or not the user would like to export their plan
+
+to_txt(diet_plan)

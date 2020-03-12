@@ -1,8 +1,18 @@
 from export_funcs import to_txt
+from datetime import datetime
+from animations import create_plan_anim, progress_bar
+import time
 
-def display_breakdown(daily_values: list, macros: list, meal_count: int, goal: str) -> str:
+
+def display_breakdown(daily_values: list, macros: list, meal_count: int, goal: str, weight: int or float) -> str:
+    now = datetime.now()
+
     return(f"""
     Here's your plan for {goal}:
+    ----------------------------------
+    Date Created: {now.month}/{now.day}/{now.year}
+    Weight: {round(weight)}
+    Meals: {meal_count}
     ----------------------------------
 
     Rest Day:
@@ -49,6 +59,7 @@ rmr = None
 while type(rmr) != int:
     try:
         rmr = (int(input("How much do you weigh?\n")) * 10)
+        weight = rmr / 10
     except ValueError:
         print("Sorry, that didn't work. Please enter a numeric value.")
 
@@ -110,10 +121,18 @@ while type(meal_count) != int:
     except ValueError:
         print("Sorry, please enter a numeric value.")
 
-
-diet_plan = display_breakdown(daily_values, macros, meal_count, goal)
+# Displays the plan created to the user 
+create_plan_anim()
+diet_plan = display_breakdown(daily_values, macros, meal_count, goal, weight)
 print(diet_plan)
 
-# TODO: Create decision tree to assess whether or not the user would like to export their plan
+# Determines whether or not the user would like to save the meal plan
+accepted_vals = ["Y", "N"]
 
-to_txt(diet_plan)
+will_save = None
+while will_save not in accepted_vals:
+    will_save = input("Would you like to save your plan?\n(Y/N): ").title()
+
+if will_save == "Y":
+    progress_bar()
+    to_txt(diet_plan)

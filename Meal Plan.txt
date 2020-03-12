@@ -1,28 +1,32 @@
 
-    Here's your plan for Maintaining:
+    Here's your plan for Cutting:
+    ----------------------------------
+    Date Created: 3/11/2020
+    Weight: 206
+    Meals: 6
     ----------------------------------
 
     Rest Day:
-    Total Calories: 2400.0
-    Calories Per Meal 480.0
-    Total Macro Breakdown (P/C/F): 210/240/67
-    Macro Breakdown Per Meal (P/C/F): 42/48/13
+    Total Calories: 1972.0
+    Calories Per Meal 328.6666666666667
+    Total Macro Breakdown (P/C/F): 197/173/55
+    Macro Breakdown Per Meal (P/C/F): 33/29/9
 
     Cardio Only:
-    Total Calories: 3000.0
-    Calories Per Meal: 600.0
-    Total Macro Breakdown (P/C/F): 262/300/83
-    Macro Breakdown Per Meal (P/C/F): 52/60/17
+    Total Calories: 2590.0
+    Calories Per Meal: 431.6666666666667
+    Total Macro Breakdown (P/C/F): 259/227/72
+    Macro Breakdown Per Meal (P/C/F): 43/38/12
 
     Weightlifting Day:
-    Total Calories: 3200.0
-    Calories Per Meal: 640.0
-    Total Macro Breakdown (P/C/F): 280/320/89
-    Macro Breakdown Per Meal (P/C/F): 56/64/18
+    Total Calories: 2796.0
+    Calories Per Meal: 466.0
+    Total Macro Breakdown (P/C/F): 280/245/78
+    Macro Breakdown Per Meal (P/C/F): 47/41/13
 
     Weightlifting + Another Strenuous Exercise:
-    Total Calories: 3800.0
-    Calories Per Meal: 760.0
-    Total Macro Breakdown (P/C/F): 332/380/106
-    Macro Breakdown Per Meal (P/C/F): 66/76/21
+    Total Calories: 3414.0
+    Calories Per Meal: 569.0
+    Total Macro Breakdown (P/C/F): 341/299/95
+    Macro Breakdown Per Meal (P/C/F): 57/50/16
     
